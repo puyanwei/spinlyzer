@@ -18,15 +18,4 @@ export const exampleRouter = createRouter()
     async resolve({ ctx }) {
       return await ctx.prisma.example.findMany();
     },
-  })
-  .query('postAll', {
-    async resolve({ ctx }) {
-      return await ctx.prisma.user.createMany({
-        data: [
-          { name: 'Bob', email: 'bob@prisma.io' },
-          { name: 'Yewande', email: 'yewande@prisma.io' },
-          { name: 'Angelique', email: 'angelique@prisma.io' },
-        ],
-      });
-    },
   });
