@@ -1,10 +1,11 @@
+import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import { useState, SyntheticEvent } from 'react';
 import { trpc } from '../utils/trpc';
 
 const Home: NextPage = () => {
   const [handHistory, setHandHistory] = useState<string[]>([]);
-  const data = trpc.useQuery(['example.getAll']);
+  trpc.useQuery(['example.postAll']);
 
   function handleSubmit(e: SyntheticEvent) {
     e.preventDefault();
